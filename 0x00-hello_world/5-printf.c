@@ -1,10 +1,10 @@
 #include <stdio.h>
 
 /**
- *  * main - Main entry point for the program
- *   * @void: The function does not accept any parameters
- *    * Return: int returned as 0
- *     */
+ *main - main entry point for the program
+ *void - the function does not accept any parameters
+ *Return: int returned as 0
+ */
 
 int main(void)
 
