@@ -14,10 +14,8 @@
 int main(void)
 {
     int alphabets, s = '\n';
-    for (alphabets = LAST_LETTER; alphabets >= FIRST_LETTER; alphabets--)
-    {
-        putchar(alphabets);
-    }
+        for (alphabets = LAST_LETTER; alphabets >= FIRST_LETTER; alphabets--)
+            putchar(alphabets);
     putchar(s);
 
     return (0);
