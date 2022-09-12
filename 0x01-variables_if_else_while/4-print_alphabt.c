@@ -10,16 +10,18 @@
 
 int main(void)
 {
-int alphabets;
-char s = '\n';
 
-for (alphabets = 'a' ; alphabets <= 'z' ; alphabets++)
-{
-if (alphabets != 'e' && alphabets != 'q')
-{
-putchar(alphabets);
-}
-}
-putchar(s);
-return (0);
+    int alphabets;
+    char s = '\n';
+
+    for (alphabets = 'a' ; alphabets <= 'z' ; alphabets++)
+    {
+        if (alphabets != 'e' && alphabets != 'q')
+        {
+            putchar(alphabets);
+        }
+    }
+    
+    putchar(s);
+    return (0);
 }
