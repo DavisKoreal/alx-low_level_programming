@@ -2,19 +2,23 @@
 #include <time.h>
 #include <stdio.h>
 
+#define FIRST_LETTER 'a'
+#define LAST_LETTER 'z'
+
 /**
- *main - prints lowercase alphabets in reverse
+ *main- printing lowercase alphabets in reverse
  *
  * Return: Always 0 (Success)
  */
 
 int main(void)
 {
-    for (int letter = 'z'; letter >= 'a'; letter--)
-        putchar(letter);
-    
-        
-    putchar('\n');
+    int alphabets, s = '\n';
+    for (alphabets = LAST_LETTER; alphabets >= FIRST_LETTER; alphabets--)
+    {
+        putchar(alphabets);
+    }
+    putchar(s);
 
-return (0);
+    return (0);
 }
