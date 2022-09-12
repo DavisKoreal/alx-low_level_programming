@@ -1,22 +1,18 @@
-#include <stdlib.h>
-#include <time.h>
 #include <stdio.h>
 
-#define FIRST_LETTER 'a'
-#define LAST_LETTER 'z'
-
 /**
- *main- printing lowercase alphabets in reverse
- *
- * Return: Always 0 (Success)
- */
-
+* main - Print all single digit numbers using only putchar
+*
+* Return: Always 0 (Success)
+*/
 int main(void)
 {
-    int alphabets, s = '\n';
-        for (alphabets = LAST_LETTER; alphabets >= FIRST_LETTER; alphabets--)
-            putchar(alphabets);
-    putchar(s);
+	int digit;
 
-    return (0);
+	for (digit = 0; digit < 10; digit++)
+	putchar(digit + '0');
+
+	putchar('\n');
+
+	return (0);
 }
