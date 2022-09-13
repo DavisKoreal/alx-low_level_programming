@@ -1,24 +1,18 @@
-#include <stdlib.h>
-#include <time.h>
 #include <stdio.h>
-
-#define FIRST_LETTER 'a'
-#define LAST_LETTER 'z'
-
+#include <unistd.h>
 /**
- *main- printing lowercase alphabets in reverse
- *
- * Return: Always 0 (Success)
+ * main - entry point
+ * Description: prints lowercase alphabets in reverse
+ * Return: always 0 (succes)
  */
-
 int main(void)
 {
-char alphabets, s = '\n';
-for (alphabets = LAST_LETTER; alphabets >= FIRST_LETTER; alphabets--)
-{
-putchar(alphabets);
-}
-putchar(s);
+	int a;
 
-return (0);
+	for (a = 'z'; a >= 'a'; a--)
+	{
+		putchar(a);
+	}
+	putchar('\n');
+	return (0);
 }

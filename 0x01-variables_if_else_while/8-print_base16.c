@@ -1,29 +1,24 @@
-#include <stdlib.h>
-#include <time.h>
 #include <stdio.h>
-
-#define NUMBER '0'
-#define LIMIT '9'
-
+#include <unistd.h>
 /**
- *main- displaying hexadecimal numbers
- *
- * Return: Always 0 (Success)
+ * main - entry point
+ * Description: print base 16 numbers
+ * Return: always 0 (success)
  */
-
 int main(void)
 {
-int number;
+	char c;
+	char d = '0';
 
-for (number = NUMBER; number <= LIMIT; number++)
-{
-putchar(number);
-}
-for (number = 'a'; number <= 'f'; number++)
-{
-putchar(number);
-}
-
-putchar('\n');
-return (0);
+	while (d <= '9')
+	{
+		putchar(d);
+		d++;
+	}
+	for (c = 'a'; c <= 'f'; c++)
+	{
+		putchar(c);
+	}
+	putchar('\n');
+	return (0);
 }

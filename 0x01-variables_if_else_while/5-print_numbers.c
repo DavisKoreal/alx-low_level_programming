@@ -1,26 +1,19 @@
-#include <stdlib.h>
-#include <time.h>
 #include <stdio.h>
-
-#define NUMBER 0
-#define LIMIT 10
-
+#include <unistd.h>
 /**
- *main- single digit numbers to base1 10
- *
- * Return: Always 0 (Success)
+ * main - entry point
+ * Description: prints all single digit numbers
+ * of base 10 from 0
+ * Return: always 0 (success)
  */
-
 int main(void)
 {
-int number;
+	int a;
 
-for (number = NUMBER; number < LIMIT; number++)
-{
-printf("%d", number);
-}
-
-printf("\n");
-
-return (0);
+	for (a = 0; a < 10; a++)
+	{
+		printf("%d", a);
+	}
+	putchar('\n');
+	return (0);
 }
