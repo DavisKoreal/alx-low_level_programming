@@ -1,0 +1,1 @@
+This is a readme for recording my progress through pointers in c. Pointers are variables that hold memory adress and thus their size depends on the size of the bus of a computer. If you really think about a computer architecture though, everything is indeed a pointer because only pointers can be fed to the Arithmethic and Logic Unit of a CPU. 
