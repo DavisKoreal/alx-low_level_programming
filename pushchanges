@@ -5,5 +5,5 @@ pushchanges(){
     git push
 }
 
-pushchanges "%T"
+pushchanges "flow"
 
