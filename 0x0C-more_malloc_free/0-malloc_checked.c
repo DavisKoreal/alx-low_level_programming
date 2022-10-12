@@ -3,26 +3,25 @@
 #include <stdio.h>
 
 /**
- * malloc_checked - returns pointer to allocated location 
- * 
- *  b - the size of the storage 
- *  void* - returns a void pointer
+ * malloc_checked - allocates memory using malloc
+ * @b: number of bytes in memory to allocate
+ * Return: pointer to allocated memory(Success), 98 on failure
  */
 
 void * malloc_checked(unsigned int b)
 {
-    void *result = malloc(b);
+    void *pointer = malloc(b);
     
-    if(result == NULL)
+    if(pointer == NULL)
     {
-        return (NULL);
+        return (98);
     }
 
     if (b == 0)
     {
-        return (NULL);
+        return (98);
     }
 
-    return result;
+    return pointer;
 
 }
