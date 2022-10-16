@@ -41,6 +41,14 @@ int main(void)
     int *a;
 
     a = array_range(0, 10);
+    if(a == NULL)
+    {
+        printf("Returned a null pointer\n");
+    }
+    else 
+    {
+        printf("Array created succesfully\n");
+    }
     simple_print_buffer(a, 11);
     free(a);
     return (0);

@@ -1,42 +1,50 @@
-#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "main.h"
 
-int *array_range(int min, int max)
-
+/**
+ *array_range - function that creates and array
+ *@ min: minimum number
+ *@ max: maximum number
+ *Return: pointer to start of array 
+*/
+int * array_range(int min, int max)
 {
-    
-    int * return_pointer;
-    int * return_iterator_pointer;
-    int iterator;
-    int arraysize;
-    
-    if(min > max )
+    int* return_pointer;
+    int* array_iteration_pointer;
+    int i;
+    int sizeofint;
+
+    if (min > max)
     {
-        return_pointer = NULL;
-        return return_pointer;
+        return (NULL);
+    }
+    else 
+    {
+        printf("Min is greater than max \n");
     }
 
-    arraysize = ((max - min) + 1);
-    return_pointer = malloc(arraysize * 4);
+    sizeofint = sizeof(int);
+    return_pointer = malloc(((max - min) + 1) * sizeofint);
 
     if(return_pointer == NULL)
     {
-        return_pointer = NULL;
-        return return_pointer;
+        return (NULL);
     }
-
-    return_iterator_pointer = return_pointer;
-    iterator = min;
-    while (iterator <= max)
+    else
     {
-        *return_iterator_pointer = iterator;
-        iterator ++;
-        return_iterator_pointer ++;
+        printf("The return pointer is not null\n");
     }
+    array_iteration_pointer = return_pointer;
 
-    *return_iterator_pointer = '\0';
+    i = 0;
+    
+    while( i < (max + 1))
+    {
+        *array_iteration_pointer = i;
+        array_iteration_pointer += sizeofint;
+        i++;
+    }
 
     return return_pointer;
-
 }
