@@ -31,10 +31,11 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
         array_iteration_counter = 0;
 
-        while(array_iteration_counter < size)
+        while(array_iteration_counter < nmemb)
         {
             *return_iteration_pointer = 0;
             return_iteration_pointer += size;
+
             array_iteration_counter ++;
         }
 
