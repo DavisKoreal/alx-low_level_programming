@@ -1,75 +1,45 @@
+#include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
-
-/*
- * string_nconcat - concatenates two strings
- * s1 - string number one
- * s2 - string number two
- * n = number of characters to be concatenated to first string
+/**
+ * string_nconcat - Concatenates two strings using at
+ *                  most an inputted number of bytes.
+ * @s1: The first string.
+ * @s2: The second string.
+ * @n: The maximum number of bytes of s2 to concatenate to s1.
+ * Return: If the function fails - NULL.
+ *         Otherwise - a pointer to the concatenated space in memory.
  */
-
 char *string_nconcat(char *s1, char *s2, unsigned int n)
-{ 
+{
+	char *concat_string;
+	unsigned int i = 0, j = 0, len1 = 0, len2 = 0;
 
-    char * first_iteration_address;
-    char * second_iteration_address;
-    unsigned int sizeoffirststring;
-    unsigned int sizeofsecondstring;
-    int sizeofreturnstring;
-    char * return_string_pointer;
-    char * return_iteration_pointer;
-    unsigned int second_string_counter;
+	while (s1 && s1[len1])
+		len1++;
 
+	while (s2 && s2[len2])
+		len2++;
 
-    second_iteration_address = s2;
-    first_iteration_address = s1;
+	if (n < len2)
+		concat_string = malloc(sizeof(char) * (len1 + n + 1));
+	else
+		concat_string = malloc(sizeof(char) * (len1 + len2 + 1));
 
-    sizeoffirststring = 0;
-    while((*first_iteration_address) != '\0')
-    {
-        sizeoffirststring++;
-        first_iteration_address += 1;
-    }
+	if (!concat_string)
+		return (NULL);
 
-    sizeofsecondstring = 0;
-    while((*second_iteration_address) != '\0')
-    {
-        sizeofsecondstring++;
-        second_iteration_address += 1;
-    }
+	while (i < len1)
+	{
+		concat_string[i] = s1[i];
+		i++;
+	}
 
-    sizeofreturnstring = 0;
-    if((n >= sizeofsecondstring) || (n == sizeofsecondstring))
-    {
-        sizeofreturnstring = sizeoffirststring + sizeofreturnstring;
-    }
-    else
-    {
-        sizeofreturnstring = sizeoffirststring + n;
-    }
+	while (n < len2 && i < (len1 + n))
+		concat_string[i++] = s2[j++];
 
-    return_string_pointer = malloc(sizeofreturnstring);
-    return_iteration_pointer = return_string_pointer;
-    first_iteration_address = s1;
-    second_iteration_address = s2;
+	while (n >= len2 && i < (len1 + len2))
+		concat_string[i++] = s2[j++];
 
-    while( *first_iteration_address != '\0')
-    {
-        (*return_iteration_pointer) = (*first_iteration_address);
-        first_iteration_address += 1;
-        return_iteration_pointer += 1;
-    }
-
-    second_string_counter = 0;
-    while(second_string_counter < n )
-    {
-        (*return_iteration_pointer) = (*second_iteration_address);
-        second_iteration_address += 1;
-        return_iteration_pointer += 1;
-        second_string_counter += 1;
-    }
-
-    *return_iteration_pointer = '\0';
-
-    return (return_string_pointer);
+	concat_string[i] = '\0';
+	return (concat_string);
 }
