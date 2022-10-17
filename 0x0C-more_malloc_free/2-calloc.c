@@ -1,46 +1,33 @@
 #include <stdlib.h>
-#include <stdio.h>
-
-/*
- * string_nconcat - concatenates two strings
- * s1 - string number one
- * s2 - string number two
- * n = number of characters to be concatenated to first string
+#include "main.h"
+/**
+ * _calloc - implements calloc with malloc
+ * Allocates memory for an array using malloc
+ * @nmemb: number of elements in the array
+ * @size: the size of the array to be created
+ * Return: NULL if nmemb/size is 0,
+ * if malloc fails, return NULL,
  */
-
 void *_calloc(unsigned int nmemb, unsigned int size)
-{ 
-    /*
-     * declaration of variables
-     */
+{
+	void *memory;
 
-    char * return_pointer;
-    char * return_iteration_pointer;
-    unsigned int array_iteration_counter;
+	char *buffer;
 
-    return_pointer = malloc( nmemb * size);
+	unsigned int i;
 
-    if(return_pointer == NULL)
-    {
-        return return_pointer;
-    }
+	if (nmemb == 0 || size == 0)
+		return (NULL);
 
-    else
-    {
-        return_iteration_pointer = return_pointer;
+	memory = malloc(nmemb * size);
 
-        array_iteration_counter = 0;
+	if (memory == NULL)
+		return (NULL);
 
-        while(array_iteration_counter < nmemb)
-        {
-            *return_iteration_pointer = 0;
-            return_iteration_pointer += size;
+	buffer = memory;
 
-            array_iteration_counter ++;
-        }
+	for (i = 0; i < (nmemb * size); i++)
+		buffer[i] = '\0';
 
-        *return_iteration_pointer = '\0'; 
-        
-        return (return_pointer);
-    }
+	return (memory);
 }

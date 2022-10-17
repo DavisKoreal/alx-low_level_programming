@@ -10,9 +10,6 @@
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 { 
-    /*
-     * declaration of variables
-     */
 
     char * first_iteration_address;
     char * second_iteration_address;
@@ -23,9 +20,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
     char * return_iteration_pointer;
     unsigned int second_string_counter;
 
-    /*
-     * counting the size of the strings
-     */
 
     second_iteration_address = s2;
     first_iteration_address = s1;
@@ -54,9 +48,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
         sizeofreturnstring = sizeoffirststring + n;
     }
 
-    /*
-     * copying the n-number of characters into the return string
-     */
     return_string_pointer = malloc(sizeofreturnstring);
     return_iteration_pointer = return_string_pointer;
     first_iteration_address = s1;
@@ -79,11 +70,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
     }
 
     *return_iteration_pointer = '\0';
-
-
-    /*
-     * returning the pointer
-     */
 
     return (return_string_pointer);
 }
