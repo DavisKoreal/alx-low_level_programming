@@ -1,11 +1,11 @@
 #ifndef DOG_H
 #define DOG_H
-/*
+/**
  * struct dog - This is a struct that is used to hold information about a dog 
- * @name : name of the dog 
- * @age : age of the dog
+ * @name: name of the dog 
+ * @age: age of the dog
  * @owner: stores details of the dog's owner
- * */
+ */
 
 struct dog 
 {
